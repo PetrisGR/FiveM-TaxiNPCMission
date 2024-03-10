@@ -36,13 +36,12 @@ It is pre-configured with [ESX Legacy](https://github.com/esx-framework/esx_core
 
 ## Usage
 
-2. Download the [latest version](https://github.com/PetrisGR/FiveM-CaptureTheArea/releases/latest/download/petris-taxinpcmission.zip).
+2. Download the [latest version](https://github.com/PetrisGR/FiveM-TaxiNPCMission/releases/latest/download/petris-taxinpcmission.zip).
 3. Drag & Drop the zip file into your `resources` folder.
 4. Un-zip the folder of the script.
 5. Start the script via your server.cfg by typing `ensure petris-taxinpcmission` in a new code line.  
 6. Make sure you configure the resource with your framework functions. (Ignore this if you use ESX Legacy or QBCore)
-7. Launch your FiveM server.
-8. Join the server and enjoy your area capturing.
+7. Launch your FiveM server and enjoy the taxi missions.
 
 ⚠️ To initiate or stop a taxi mission, use the following server-sided export functions:
 
