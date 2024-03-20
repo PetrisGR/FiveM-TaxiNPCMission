@@ -63,22 +63,26 @@ Config = {
         }
     },
 
+    Framework = (GetResourceState("es_extended") == "started" and exports['es_extended']:getSharedObject()) or (GetResourceState("qb-core") == "started" and exports['qb-core']:GetSharedObject()) or nil,
+
     Functions = {
         CanStart = function(playerId)
             -- You can add any terms here.
             return true
         end,
+        
         GetIdentifier = function(playerId)
             if GetResourceState("es_extended") == "started" then
                 local xPlayer = Config.Framework.GetPlayerFromId(playerId)
 
                 return xPlayer.identifier
             elseif GetResourceState("qb-core") == "started" then
-                local Player = QBCore.Functions.GetPlayer(playerId)
+                local Player = Config.Framework.Functions.GetPlayer(playerId)
 
                 return Player.PlayerData.citizenid
             end
         end,
+
         SendNotification = function(playerId, text)
             if GetResourceState("es_extended") == "started" then
                 TriggerClientEvent('esx:showNotification', playerId, text)
@@ -86,12 +90,15 @@ Config = {
                 TriggerClientEvent('QBCore:Notify', playerId, text)
             end
         end,
+
         PayDriver = function(driverId, reward)
             if GetResourceState("es_extended") == "started" then
                 local xPlayer = Config.Framework.GetPlayerFromId(driverId)
+                
                 xPlayer.addAccountMoney('money', reward, 'Taxi Mission')
             elseif GetResourceState("qb-core") == "started" then
-                local Player = QBCore.Functions.GetPlayer(driverId)
+                local Player = Config.Framework.Functions.GetPlayer(driverId)
+
                 Player.Functions.AddMoney('cash', reward, "taxi-mission", false)
             end
         end
