@@ -69,7 +69,6 @@ Config = {
             return true
         end,
         GetIdentifier = function(playerId)
-            -- ESX EXAMPLE
             if GetResourceState("es_extended") == "started" then
                 local xPlayer = Config.Framework.GetPlayerFromId(playerId)
 
