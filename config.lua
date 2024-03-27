@@ -63,7 +63,7 @@ Config = {
         }
     },
 
-    Framework = (GetResourceState("es_extended") == "started" and exports['es_extended']:getSharedObject()) or (GetResourceState("qb-core") == "started" and exports['qb-core']:GetSharedObject()) or nil,
+    Framework = (GetResourceState("es_extended") == "started" and exports['es_extended']:getSharedObject()) or (GetResourceState("qb-core") == "started" and  exports['qb-core']:GetCoreObject()) or nil,
 
     Functions = {
         CanStart = function(playerId)
